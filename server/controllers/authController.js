@@ -12,7 +12,8 @@ exports.register = async (req, res) => {
     let user = new User({ email, password})
     user.password = await user.encryptPassword(user.password);
     await user.save();
-    res.json(true);
+    res.json(true); 
+    
 };
 
 exports.login = async (req, res) => {
